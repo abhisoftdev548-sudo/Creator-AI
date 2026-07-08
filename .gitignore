@@ -104,4 +104,3 @@ firebase-adminsdk*.json
 *.tgz
 *.zip
 
-package-lock.json
