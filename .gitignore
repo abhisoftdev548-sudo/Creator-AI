@@ -1,0 +1,105 @@
+# ==========================
+# Dependencies
+# ==========================
+node_modules/
+
+# ==========================
+# Environment Variables
+# ==========================
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# ==========================
+# Build Output
+# ==========================
+dist/
+build/
+.out/
+.next/
+.vercel/
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================
+# Cache
+# ==========================
+.cache/
+.parcel-cache/
+.vite/
+.eslintcache
+
+# ==========================
+# Coverage
+# ==========================
+coverage/
+.nyc_output/
+
+# ==========================
+# Operating System Files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# IDE / Editor
+# ==========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==========================
+# Temporary Files
+# ==========================
+tmp/
+temp/
+*.tmp
+
+# ==========================
+# Package Managers
+# ==========================
+.pnp
+.pnp.js
+
+# ==========================
+# Runtime Data
+# ==========================
+*.pid
+*.seed
+*.pid.lock
+
+# ==========================
+# Uploads (Optional)
+# Uncomment if storing uploads locally
+# ==========================
+# uploads/
+# public/uploads/
+
+# ==========================
+# MongoDB Local Data (if any)
+# ==========================
+data/
+mongodb-data/
+
+# ==========================
+# Firebase / Supabase / Keys
+# ==========================
+serviceAccountKey.json
+firebase-adminsdk*.json
+
+# ==========================
+# Misc
+# ==========================
+*.tgz
+*.zip
