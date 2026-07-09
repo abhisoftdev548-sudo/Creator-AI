@@ -7,6 +7,7 @@ import userRouter from './routers/user.route.js'
 import cors from 'cors'
 import generateResponse from './config/oepnRouter.js'
 import websiteRouter from './routers/website.route.js'
+import billingRouter from './routers/billing.route.js'
 const port = process.env.PORT || 3000
 
 const app = express()
@@ -22,6 +23,7 @@ app.use(cors({
 app.use('/api/auth', authRouter)
 app.use('/api/user', userRouter)
 app.use('/api/website', websiteRouter)
+app.use('/api/billing', billingRouter)
 
 
 app.listen(port, ()=>{

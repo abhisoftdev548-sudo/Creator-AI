@@ -11,18 +11,18 @@ const Home = () => {
   const [openAuthPopup, setopenAuthPopup] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
   const { userData } = useSelector((state) => state.user);
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
   console.log(userData);
-  const navigate = useNavigate()
-const handleLogout = async ()=> {
-  try{
-    await axios.get(`${serverUrl}/auth/logout`, {withCredentials: true})
-    dispatch(setUserData(null))
-    setOpenProfile(false)
-  }catch(error){
-    console.log(error)
-  }
-}
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      await axios.get(`${serverUrl}/auth/logout`, { withCredentials: true });
+      dispatch(setUserData(null));
+      setOpenProfile(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const heighlights = [
     {
       head: "Build Responsive Layouts",
@@ -51,7 +51,10 @@ const handleLogout = async ()=> {
           <div className="text-xl font-semibold">Creator.ai</div>
 
           <div className="flex items-center gap-5">
-            <div className="hidden md:inline text-sm text-zinc-400 hover:text-white">
+            <div
+              className="hidden md:inline text-sm text-zinc-400 hover:text-white"
+              onClick={() => navigate("/pricing")}
+            >
               Pricing
             </div>
             {userData && (
@@ -59,7 +62,12 @@ const handleLogout = async ()=> {
                 <LuCoins className="text-yellow-400" size={14} />
                 <span className="text-zinc-300">Credits</span>
                 <span>{userData?.credits}</span>
-                <span className="font-semibold">+</span>
+                <span
+                  className="font-semibold"
+                  onClick={() => navigate("/pricing")}
+                >
+                  +
+                </span>
               </div>
             )}
             {!userData ? (
@@ -77,7 +85,8 @@ const handleLogout = async ()=> {
                   className="flex items-center"
                   onClick={() => setOpenProfile(!openProfile)}
                 >
-                  <img referrerPolicy="no-referrer"
+                  <img
+                    referrerPolicy="no-referrer"
                     src={
                       userData?.avatar ||
                       `https://ui-avatars.com/api/?name=${userData?.name}`
@@ -109,8 +118,18 @@ const handleLogout = async ()=> {
                           <span>{userData?.credits}</span>
                           <span className="font-semibold">+</span>
                         </button>
-                        <button className="w-full px-4 py-3 text-left text-sm hover:bg-white/5" onClick={()=>navigate('/dashboard')}>Dashboard</button>
-                        <button className="w-full px-4 py-3 text-left text-sm text-red-400 hover:bg-white/5" onClick={handleLogout}>Logout</button>
+                        <button
+                          className="w-full px-4 py-3 text-left text-sm hover:bg-white/5"
+                          onClick={() => navigate("/dashboard")}
+                        >
+                          Dashboard
+                        </button>
+                        <button
+                          className="w-full px-4 py-3 text-left text-sm text-red-400 hover:bg-white/5"
+                          onClick={handleLogout}
+                        >
+                          Logout
+                        </button>
                       </motion.div>
                     </>
                   )}
@@ -144,7 +163,14 @@ const handleLogout = async ()=> {
           Describe you idea and let AI generate a modern, responsive,
           production-ready website.
         </motion.p>
-        <button className="px-10 py-4 rounded-xl bg-white text-black font-semibold hover:scale-105 transition mt-12" onClick={()=>{userData?navigate('/dashboard'):''}}>{userData?"Go to Dashboard":"Get Started"}</button>
+        <button
+          className="px-10 py-4 rounded-xl bg-white text-black font-semibold hover:scale-105 transition mt-12"
+          onClick={() => {
+            userData ? navigate("/dashboard") : setopenAuthPopup(true);
+          }}
+        >
+          {userData ? "Go to Dashboard" : "Get Started"}
+        </button>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 pb-20">
