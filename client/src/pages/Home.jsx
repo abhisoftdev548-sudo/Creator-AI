@@ -119,13 +119,13 @@ const Home = () => {
                           <span className="font-semibold">+</span>
                         </button>
                         <button
-                          className="w-full px-4 py-3 text-left text-sm hover:bg-white/5 z-100"
+                          className="w-full px-4 py-3 text-left text-sm hover:bg-white/5 "
                           onClick={() => navigate("/dashboard")} 
                         >
                           Dashboard
                         </button>
                         <button
-                          className="w-full px-4 py-3 text-left text-sm text-red-400 hover:bg-white/5 z-100"
+                          className="w-full px-4 py-3 text-left text-sm text-red-400 hover:bg-white/5 "
                           onClick={handleLogout}
                         >
                           Logout
@@ -164,7 +164,7 @@ const Home = () => {
           production-ready website.
         </motion.p>
         <button
-          className="px-10 py-4 rounded-xl bg-white text-black font-semibold hover:scale-105 transition mt-12"
+          className="px-10 py-4 rounded-xl bg-white text-black font-semibold hover:scale-105 z-200 transition mt-12"
           onClick={() => {
             userData ? navigate("/dashboard") : setopenAuthPopup(true);
           }}
