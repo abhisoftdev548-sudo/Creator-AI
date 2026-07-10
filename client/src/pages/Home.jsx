@@ -58,7 +58,7 @@ const Home = () => {
               Pricing
             </div>
             {userData && (
-              <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm cursor-pointer hover:bg-white/10 transition">
+              <div onClick={() => navigate("/pricing")} className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm cursor-pointer hover:bg-white/10 transition">
                 <LuCoins className="text-yellow-400" size={14} />
                 <span className="text-zinc-300">Credits</span>
                 <span>{userData?.credits}</span>
@@ -112,20 +112,20 @@ const Home = () => {
                             {userData.email}
                           </p>
                         </div>
-                        <button className="md:hidden w-full px-4 py-3 flex items-center text-sm border-b border-white/10 hover:bg-white/5 gap-2">
+                        <button onClick={() => navigate("/pricing")} className="md:hidden w-full px-4 py-3 flex items-center text-sm border-b border-white/10 hover:bg-white/5 gap-2">
                           <LuCoins className="text-yellow-400" size={14} />
                           <span className="text-zinc-300">Credits</span>
                           <span>{userData?.credits}</span>
                           <span className="font-semibold">+</span>
                         </button>
                         <button
-                          className="w-full px-4 py-3 text-left text-sm hover:bg-white/5"
-                          onClick={() => navigate("/dashboard")}
+                          className="w-full px-4 py-3 text-left text-sm hover:bg-white/5 z-100"
+                          onClick={() => navigate("/dashboard")} 
                         >
                           Dashboard
                         </button>
                         <button
-                          className="w-full px-4 py-3 text-left text-sm text-red-400 hover:bg-white/5"
+                          className="w-full px-4 py-3 text-left text-sm text-red-400 hover:bg-white/5 z-100"
                           onClick={handleLogout}
                         >
                           Logout
