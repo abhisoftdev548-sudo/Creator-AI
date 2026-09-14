@@ -29,7 +29,7 @@ const AuthPopup = ({ onClose }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed top-0 left-0 right-0 w-full h-full flex items-center justify-center bg-black/90 z-50"
+        className="fixed top-0 left-0 right-0 w-full h-full flex items-center justify-center bg-black/90 z-250"
         onClick={onClose}
       >
         <motion.div
@@ -50,7 +50,7 @@ const AuthPopup = ({ onClose }) => {
               <h1 className="py-1.5 px-6 rounded-full bg-white/5">
                 AI - Powered Website Builder
               </h1>
-              <h2 className="flex items-center w-full gap-2 text-2xl leading-tight space-x-2 mt-6 justify-center">
+              <h2 className="flex items-center w-full gap-2 text-lg sm:text-2xl leading-tight space-x-2 mt-6 justify-center">
                 {" "}
                 <span>Welcome To</span>
                 <span className="bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-bold">
