@@ -10,7 +10,7 @@ const plans = [
     name: "Free",
     price: "₹0",
     credits: 100,
-    description: "Perfect to explore GenWeb.ai",
+    description: "Perfect to explore Creator.ai",
     features: [
       "AI website generation",
       "Responsive HTML output",
@@ -78,7 +78,7 @@ const Pricing = () => {
         key: import.meta.env.VITE_RAZORPAY_KEY_ID,
         amount: data.data.amount,
         currency: data.data.currency,
-        name: "GenWeb AI",
+        name: "Creator AI",
         description: `${planKey.toUpperCase()} Plan`,
         order_id: data.data.id,
         handler: async function (response) {
